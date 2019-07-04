@@ -1,0 +1,8 @@
+---          
+- hosts: localhost
+  gather_facts: False
+  tasks:     
+    - include_tasks: tasks/frontend.yml
+    - include_tasks: tasks/app1.yml
+    - include_tasks: tasks/app2.yml
+    - include_tasks: tasks/db.yml
