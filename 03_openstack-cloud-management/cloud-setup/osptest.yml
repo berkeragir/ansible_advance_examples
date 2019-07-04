@@ -1,7 +1,6 @@
 ---
 - name: Basic config for control node
   hosts: localhost
-  become: yes
   gather_facts: False
   tasks:
 
