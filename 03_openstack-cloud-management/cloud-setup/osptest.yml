@@ -1,0 +1,19 @@
+---
+- name: Basic config for control node
+  hosts: localhost
+  become: yes
+  gather_facts: False
+  tasks:
+
+  - name: create clouds.yml
+    template:
+      src: clouds.yml.j2
+      dest: /etc/openstack/clouds.yml
+  
+  - name: Verify openstack connectivity
+    os_auth:
+      cloud: ospcloud
+
+  - name: get user's list
+    os_user_facts:
+      cloud: ospcloud
